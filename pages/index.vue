@@ -108,15 +108,17 @@ export default {
         z-index: 8;
     }
     overflow: hidden;
+    max-height: 100%;
 }
 .front-banner {
+    position: relative;
     overflow: hidden;
 }
 .ass {
     position: absolute;
     transition: all .05s ease-in-out;
     &-3 {
-        bottom: 0;
+        top: -50px;
         left: 0;
         width: 100vw;
         filter: saturate(150%) blur(1px);
