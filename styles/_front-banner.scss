@@ -1,0 +1,71 @@
+.front-banner {
+	@media screen and (min-width: 1024px) {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: space-between;
+		min-height: calc(100vh - 70px);
+		.body {
+			align-items: center;
+			display: flex;
+			flex-grow: 1;
+			flex-shrink: 0;
+			padding: 3rem 0;
+			.container {
+				flex-grow: 1;
+				flex-shrink: 1;
+			}
+		}
+		h1 {
+			font-size: 5rem!important;
+		}
+		p {
+			font-size: 1.5rem;
+		}
+	}
+	@media screen and (max-width: 1023px) {
+		p {
+			font-size: 1.25rem;
+		}
+	}
+	.carousel {
+		border-radius: 12px;
+		overflow: hidden;
+		&-caption {
+			background: var(--dyna-blur);
+			backdrop-filter: blur(20px);
+			@media screen and (max-width: 1023px) {
+				text-align: left;
+				padding: 20px 20px 35px;
+			}
+			color: #fff;
+			$rad: 15px;
+			left: $rad;
+			right: $rad;
+			bottom: $rad;
+			border-radius: $rad;	
+		}
+		&-indicators {
+			@media screen and (min-width: 1024px) {
+				bottom: 110px;
+			}
+			@media screen and (max-width: 1023px) {
+				$rad: 15px;
+				left: $rad;
+				right: $rad;
+				bottom: 30px;
+				border-radius: $rad;
+				justify-content: left;
+				margin: 0;
+				padding: 0 20px;
+			}
+			li {
+				outline: none!important;
+				width: 10px;
+				height: 10px;
+				border-radius: 100px;
+				border: none;
+			}
+		}
+	}
+}

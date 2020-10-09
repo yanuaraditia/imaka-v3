@@ -1,0 +1,27 @@
+.navbar {
+	background: var(--dyna-blur);
+	backdrop-filter: saturate(180%) blur(20px);
+	font-weight: 500;
+	position: fixed!important;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 11111;
+	min-height: 70px;
+	@media screen and (min-width: 1024px) {
+		&-nav {
+			width: 100%;
+		}
+	}
+	@media screen and (max-width: 1024px) {
+		&-nav {
+			border-top: 1px solid rgba($color: #fff, $alpha: .15);
+			li:not(:last-child) {
+				border-bottom: 1px solid rgba($color: #fff, $alpha: .15);
+			}
+		}
+	}
+	.nuxt-link-exact-active {
+		color: $primary!important;
+	}
+}

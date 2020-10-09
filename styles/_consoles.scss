@@ -1,0 +1,20 @@
+.fluid {
+    text-decoration: none;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        height: 2px;
+        left: 0;
+        background: currentColor;
+        width: 0;
+        transition: width .25s linear;
+    }
+    &:hover {
+        text-decoration: none;
+        &::after {
+            width: 100%;
+        }
+    }
+}
