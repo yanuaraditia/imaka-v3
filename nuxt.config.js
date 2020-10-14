@@ -36,6 +36,10 @@ export default {
             },
         ],
     },
+    bootstrapVue: {
+        bootstrapCSS: false, 
+        bootstrapVueCSS: false
+    },    
     buildModules: [
         '@nuxtjs/pwa',
         '@nuxtjs/color-mode'

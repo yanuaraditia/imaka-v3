@@ -41,11 +41,21 @@ export default {
     },
     data() {
         return {
-            isLoaded: false,
-            anggotas: [],
             page: 1,
             perPage: 12,
             pages: [],
+        }
+    },
+    async asyncData({params, error}) {
+        const { data } = await axios.get('https://dev.imaka.or.id/api/anggota')
+
+        if(data.data) {
+            return {
+                anggotas: data.data,
+                isLoaded: true,
+            }
+        } else {
+            error({ statusCode: 500, message: 'Bad gateway' })
         }
     },
     methods: {
@@ -55,24 +65,6 @@ export default {
         clickPg(type) {
             this.page = type
             localStorage.current_page = this.page
-        },
-        async getPosts () {
-            if(localStorage.current_page) {
-                this.page = localStorage.current_page
-            }
-            if(localStorage.anggotas) {
-                this.anggotas = JSON.parse(localStorage.anggotas)
-                this.isLoaded = true
-            }
-            await axios.get('https://dev.imaka.or.id/api/anggota')
-            .then(response => {
-                localStorage.anggotas = JSON.stringify(response.data.data)
-                this.anggotas = response.data.data
-                this.isLoaded = true
-            })
-            .catch(response => {
-                console.log(response);
-            });
         },
         setPages () {
             this.pages = []
@@ -88,9 +80,6 @@ export default {
             let to = (page * perPage);
             return  posts.slice(from, to);
         }
-    },
-    mounted () {
-        this.getPosts();
     },
     watch: {
         anggotas () {

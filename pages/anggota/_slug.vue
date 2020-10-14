@@ -66,33 +66,24 @@ export default {
         // Must be a number
         return /^\d+$/.test(params.slug)
     },
-    data() {
-        return {
-            isLoaded: false,
-            anggota: null,
-            title: 'Detail Anggota'
+    async asyncData({params, error}) {
+        const { data } = await axios.get(`https://dev.imaka.or.id/api/anggota/${params.slug}`).catch(e => {
+            error({ statusCode: 404, message: 'Anggota tidak ditemukan' })
+        })
+        if(data.data) {
+            return {
+                anggota: data.data,
+                isLoaded: true,
+                title: data.data.name
+            }
+        } else {
+            error({ statusCode: 404, message: 'Anggota tidak ditemukan' })
         }
     },
     head() {
         return {
             title: this.title
         }
-    },
-    methods: {
-        async getUser() {
-            const { slug } = this.$route.params
-            await axios.get(`https://dev.imaka.or.id/api/anggota/${slug}`)
-            .then(res => {
-                localStorage[`a_${slug}`] = JSON.stringify(res.data.data)
-                this.anggota = res.data.data
-                this.title = this.anggota.name
-                this.isLoaded =true
-            })
-            .catch(err => console.log(err))
-        }
-    },
-    mounted() {
-        this.getUser()
     },
 }
 </script>
