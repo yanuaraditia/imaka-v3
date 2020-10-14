@@ -35,42 +35,51 @@
 </template>
 <script>
 import axios from 'axios'
-
 export default {
     head: {
         title: 'Anggota'
     },
-    async asyncData({params, error}) {
-        const { data } = await axios.get('https://dev.imaka.or.id/api/anggota')
-
-
-        if(data.data) {
-            return {
-                page:1,
-                anggotas: data.data,
-                isLoaded: true,
-                perPage: 12,
-                pages: this.setPages(data.data)
-            }
-        } else {
-            error({ statusCode: 500, message: 'Bad gateway' })
+    data() {
+        return {
+            isLoaded: false,
+            anggotas: [],
+            page: 1,
+            perPage: 12,
+            pages: [],
         }
     },
     methods: {
-        setPages(content) {
-            var pages = []
-            let numberOfPages = Math.ceil(content.length / 12);
-            for (let index = 1; index <= numberOfPages; index++) {
-                pages.push(index);
-            }
-            return pages
-        },
         prepAnggota(data) {
             localStorage[`a_${data.id}`] = JSON.stringify(data)
         },
         clickPg(type) {
             this.page = type
             localStorage.current_page = this.page
+        },
+        async getPosts () {
+            if(localStorage.current_page) {
+                this.page = localStorage.current_page
+            }
+            if(localStorage.anggotas) {
+                this.anggotas = JSON.parse(localStorage.anggotas)
+                this.isLoaded = true
+            }
+            await axios.get('https://dev.imaka.or.id/api/anggota')
+            .then(response => {
+                localStorage.anggotas = JSON.stringify(response.data.data)
+                this.anggotas = response.data.data
+                this.isLoaded = true
+            })
+            .catch(response => {
+                console.log(response);
+            });
+        },
+        setPages () {
+            this.pages = []
+            let numberOfPages = Math.ceil(this.anggotas.length / this.perPage);
+            for (let index = 1; index <= numberOfPages; index++) {
+                this.pages.push(index);
+            }
         },
         paginate (posts) {
             let page = this.page;
@@ -80,11 +89,18 @@ export default {
             return  posts.slice(from, to);
         }
     },
+    mounted () {
+        this.getPosts();
+    },
+    watch: {
+        anggotas () {
+            this.setPages();
+        }
+    },
     computed: {
         displayedAnggota () {
             return this.paginate(this.anggotas);
         }
     },
-
 }
 </script>
