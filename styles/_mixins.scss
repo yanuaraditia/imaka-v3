@@ -1,4 +1,5 @@
-@mixin backdrop-filter($param) {
-    backdrop-filter: $param;
-    -webkit-backdrop-filter: $param;
+@mixin top {
+    top: 0;
+    lef: 0;
+    right: 0;
 }

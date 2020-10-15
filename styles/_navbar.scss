@@ -3,9 +3,7 @@
 	backdrop-filter: saturate(180%) blur(20px);
 	font-weight: 500;
 	position: fixed!important;
-	top: 0;
-	left: 0;
-	right: 0;
+	@include top;
 	z-index: 11111;
 	min-height: 70px;
 	@media screen and (min-width: 1024px) {
