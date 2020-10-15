@@ -72,9 +72,9 @@ export default {
         })
         if(data) {
             return {
-                anggota: data,
+                anggota: data.data,
                 isLoaded: true,
-                title: data.name
+                title: data.data.name
             }
         } else {
             error({ statusCode: 404, message: 'Anggota tidak ditemukan' })
