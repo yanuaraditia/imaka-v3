@@ -9,3 +9,12 @@
 @import 'btn';
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap-vue/src/index.scss';
+.dark-mode {
+    .main {
+        @media screen and (min-width: 1024px) {
+            margin-top: 60px;
+            padding-top: 30px;
+        }
+        position: relative;
+    }
+}

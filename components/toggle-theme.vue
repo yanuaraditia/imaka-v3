@@ -24,6 +24,7 @@ export default {
     if(localStorage['nuxt-color-mode'] == 'dark') {
       this.darkTheme = true
     }
+    $nuxt.$colorMode.preference = this.darkTheme ? 'dark' : 'light'
   }
 }
 </script>

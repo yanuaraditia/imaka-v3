@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="lg" type="dark">
+  <b-navbar toggleable="lg" type="dark" v-bind:class="isFixed ? 'fixed' : 'rel'">
       <div class="container-fluid">
         <b-navbar-brand to="/" class="mr-md-5 pr-md-3"><main-logo></main-logo></b-navbar-brand>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -15,3 +15,28 @@
       </div>
   </b-navbar>
 </template>
+<script>
+export default {
+    data() {
+        return {
+            isFixed: true,
+            lastScrollPosition: 0
+        }
+    },
+    methods: {
+        onScroll () {
+            const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop
+            this.isFixed = currentScrollPosition > 60 ? true : false
+            this.lastScrollPosition = currentScrollPosition
+            console.log(currentScrollPosition)
+        }
+    },
+    mounted () {
+        this.onScroll
+        window.addEventListener('scroll', this.onScroll)
+    },
+    beforeDestroy () {
+        window.removeEventListener('scroll', this.onScroll)
+    }
+}
+</script>

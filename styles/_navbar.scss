@@ -25,3 +25,11 @@
 		color: $primary!important;
 	}
 }
+.dark-mode {
+	.navbar {
+		position: absolute!important;
+		&.fixed {
+			position: fixed!important;
+		}	
+	}
+}
