@@ -1,6 +1,6 @@
 .navbar {
 	background: var(--dyna-blur);
-	@include backdrop-filter(saturate(180%) blur(20px));
+	backdrop-filter: saturate(180%) blur(20px);
 	font-weight: 500;
 	position: fixed!important;
 	top: 0;
