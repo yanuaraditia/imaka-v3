@@ -190,7 +190,7 @@ export default {
                 postMan[this.form[i].field] = this.form[i].value
             }
             axios
-            .post('https://dev.imaka.or.id/api/kcf',qs.stringify(postMan),config)
+            .post('https://api.imaka.or.id/v2/quest',qs.stringify(postMan),config)
             .then((result) => {
                 if(result.data.success == true) {
                     alert(result.data.data)

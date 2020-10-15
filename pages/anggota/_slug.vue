@@ -67,7 +67,7 @@ export default {
         return /^\d+$/.test(params.slug)
     },
     async asyncData({params, error}) {
-        const { data } = await axios.get(`https://dev.imaka.or.id/api/anggota/${params.slug}`).catch(e => {
+        const { data } = await axios.get(`https://api.imaka.or.id/v2/anggota/${params.slug}`).catch(e => {
             error({ statusCode: 404, message: 'Anggota tidak ditemukan' })
         })
         if(data.data) {

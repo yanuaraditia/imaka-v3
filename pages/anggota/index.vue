@@ -5,7 +5,7 @@
                 <my-jumbotron title="Sedulur" desc="Sedulur"/>
                 <div class="row my-4 no-gutters peoples">
                     <div class="col-12 col-md-4 col-xl-3" v-for="(anggota, i) in displayedAnggota" :key="`${new Date().now}${i}`" @mouseover="prepAnggota(anggota)">
-                        <nuxt-link :to="`/anggota/${anggota.id}`" class="card people">
+                        <nuxt-link :to="`/anggota/${anggota.card_number}`" class="card people">
                             <div class="card-body text-nowrap">
                                 <b-img :src="anggota.image_link" class="full-radius" width="60px" height="60px" fluid alt="Responsive image"></b-img>
                                 <h4 class="card-title f-2 text-primary mt-3 mb-0 overflow-hidden">{{anggota.name}}</h4>
@@ -50,7 +50,7 @@ export default {
     },
     methods: {
         prepAnggota(data) {
-            localStorage[`a_${data.id}`] = JSON.stringify(data)
+            localStorage[`a_${data.card_number}`] = JSON.stringify(data)
         },
         clickPg(type) {
             this.page = type
@@ -64,7 +64,7 @@ export default {
                 this.anggotas = JSON.parse(localStorage.anggotas)
                 this.isLoaded = true
             }
-            await axios.get('https://dev.imaka.or.id/api/anggota')
+            await axios.get('https://api.imaka.or.id/v2/anggota')
             .then(response => {
                 localStorage.anggotas = JSON.stringify(response.data.data)
                 this.anggotas = response.data.data

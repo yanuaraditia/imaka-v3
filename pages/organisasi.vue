@@ -5,7 +5,7 @@
                 <h1 class="ndes-1 f-2">Struktur Organisasi</h1>
                 <div class="row my-4 no-gutters peoples">
                     <div class="col-12 col-md-4" v-for="anggota in penguruses" :key="anggota.id">
-                        <nuxt-link :to="'/anggota/'+anggota.user_id" class="card people">
+                        <nuxt-link :to="'/anggota/'+anggota.user.card_number" class="card people">
                             <div class="card-body text-nowrap">
                                 <b-img :src="anggota.user.image_link" class="full-radius" width="60px" height="60px" fluid alt="Responsive image"></b-img>
                                 <h4 class="f-2 card-title text-primary mt-3 mb-0 overflow-hidden">{{anggota.user.name}}</h4>
@@ -36,7 +36,7 @@ export default {
                 this.penguruses = JSON.parse(localStorage.penguruses)
                 this.isLoaded = true
             }
-            axios.get('https://dev.imaka.or.id/api/pengurus')
+            axios.get('https://api.imaka.or.id/v2/penguruses')
             .then(res => {
                 this.penguruses = res.data.data
                 localStorage.penguruses = JSON.stringify(this.penguruses)
