@@ -1,7 +1,7 @@
 <template>
     <div>
         <section class="py-5">
-            <div class="container-fluid">
+            <div class="container-fluid my-lg-5 pt-lg-4">
                 <h1 class="ndes-1 f-2">Tentang Kami</h1>
                 <div class="row">
                     <div class="col-md-8">

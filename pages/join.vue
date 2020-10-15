@@ -1,11 +1,10 @@
 <template>
     <div>
         <section class="py-5">
-            <div class="container-fluid my-lg-5">
+            <div class="container-fluid my-lg-5 pt-lg-4">
                 <div class="row">
                     <div class="col-md-6">
-                        <h1 class="ndes-1 f-2">Open Recruitment anggota baru IMAKA</h1>
-                        <p>Isi form berikut jika ingin mengenal kami secara lebih dalam.</p>
+                        <h1 class="ndes-1 f-2">Open Recruitment</h1>
                     </div>
                 </div>
                 <hr>
@@ -20,7 +19,18 @@
 export default {
     head: {
         title: 'Bergabung',
-        description: 'Open Recruitment anggota baru IMAKA'
+        meta: [
+            {
+                hid: 'description',
+                name: 'description',
+                content: 'Raih kesempatan untuk bergabung bersama komunitas ngapak terbesar di Universitas Amikom Yogyakarta'
+            },
+            {
+                hid: 'og:description',
+                name: 'og:description',
+                content: 'Raih kesempatan untuk bergabung bersama komunitas ngapak terbesar di Universitas Amikom Yogyakarta'
+            },
+        ]
     },
     computed: {
         monthEr() {

@@ -1,7 +1,7 @@
 <template>
     <div>
         <section class="py-5">
-            <div class="container-fluid">
+            <div class="container-fluid my-lg-5 pt-lg-4">
                 <my-jumbotron title="Sedulur" desc="Sedulur"/>
                 <div class="row my-4 no-gutters peoples">
                     <div class="col-12 col-md-4 col-xl-3" v-for="(anggota, i) in displayedAnggota" :key="`${new Date().now}${i}`" @mouseover="prepAnggota(anggota)">

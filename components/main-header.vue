@@ -8,8 +8,8 @@
           <b-navbar-nav class="px-0 px-lg-3 py-2 ml-auto mt-2 mt-md-0 p-md-0 justify-content-lg-end">
               <b-nav-item to="/anggota">Anggota</b-nav-item>
               <b-nav-item to="/kuisioner">Kuisioner</b-nav-item>
-              <b-nav-item to="/join">Gabung</b-nav-item>
               <b-nav-item to="/about">Tentang Kami</b-nav-item>
+              <b-nav-item to="/join">Gabung</b-nav-item>
               <toggle-theme></toggle-theme>
           </b-navbar-nav>
         </b-collapse>
@@ -29,7 +29,6 @@ export default {
             const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop
             this.isFixed = currentScrollPosition > 60 ? true : false
             this.lastScrollPosition = currentScrollPosition
-            console.log(currentScrollPosition)
         }
     },
     mounted () {

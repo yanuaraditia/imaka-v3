@@ -22,14 +22,13 @@
 	.nuxt-link-exact-active {
 		color: $primary!important;
 	}
-}
-.dark-mode {
+	&.fixed {
+		border-bottom: 1px solid rgba($color: #fff, $alpha: .15);
+	}
 	@media screen and (min-width: 1024px) {
-		.navbar {
-			position: absolute!important;
-			&.fixed {
-				position: fixed!important;
-			}	
-		}
+		position: absolute!important;
+		&.fixed {
+			position: fixed!important;
+		}	
 	}
 }

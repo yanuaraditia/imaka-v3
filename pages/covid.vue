@@ -1,7 +1,7 @@
 <template>
     <div>
         <section class="py-5">
-            <div class="container-fluid py-lg-5">
+            <div class="container-fluid my-lg-5 pt-lg-4">
                 <div class="row">
                     <div class="col-md-7 pb-lg-5 my-md-auto">
                         <h1 class="ndes-1 f-2">Total <span class="text-danger fluid p">{{caseTotal}}</span> kasus positif di sekitar kita, patuhi selalu protokol kesehatan.</h1>

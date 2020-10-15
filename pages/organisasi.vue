@@ -1,7 +1,7 @@
 <template>
     <div>
         <section class="py-5">
-            <div class="container-fluid">
+            <div class="container-fluid my-lg-5 pt-lg-4">
                 <h1 class="ndes-1 f-2">Struktur Organisasi</h1>
                 <div class="row my-4 no-gutters peoples">
                     <div class="col-12 col-md-4" v-for="anggota in penguruses" :key="anggota.id">

@@ -4,10 +4,10 @@
             <div class="body">
                 <div class="container-fluid my-md-5">
                     <div class="row">
-                        <div class="col-md-12 text-lg-center my-auto pl-xl-5 pt-5 pt-md-0 blurred">
+                        <div class="col-lg-8 my-auto pl-xl-5 pt-5 pt-md-0 blurred">
                             <h1 class="ndes-1 f-2">Ngapak Bareng, Gayeng Bareng</h1>
                             <p>Kami merangkul dan menghubungkan mahasiswa kebumen yang berkuliah di lingkup amikom yogyakarta.</p>
-                            <div class="text-left text-lg-center mt-md-4">
+                            <div class="text-left mt-md-4">
                                 <nuxt-link to="/join" class="btn btn-lg btn-primary px-lg-4">
                                 Selengkapnya
                                 <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>
@@ -121,15 +121,9 @@ export default {
         top: -50px;
         left: 0;
         width: 100vw;
-        filter: saturate(150%) blur(1px);
-        opacity: .8;
-        transition: all .2s ease-in-out;
-    }
-}
-.dark-mode {
-    .ass-3 {
-        opacity: .2;
         filter: saturate(150%) grayscale(100%);
+        opacity: .2;
+        transition: all .2s ease-in-out;
     }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div>
         <section class="py-5">
-            <div class="container-fluid">
+            <div class="container-fluid my-lg-5 pt-lg-4">
                 <div class="row">
                     <div class="col-lg-7">
                         <my-jumbotron title="Kuisioner" desc="Form penelusuran minat siswa"></my-jumbotron>
