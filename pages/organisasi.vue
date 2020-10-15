@@ -36,7 +36,7 @@ export default {
                 this.penguruses = JSON.parse(localStorage.penguruses)
                 this.isLoaded = true
             }
-            axios.get('https://api.imaka.or.id/v2/penguruses')
+            axios.get('https://api.imaka.or.id/v2/pengurus')
             .then(res => {
                 this.penguruses = res.data.datas
                 localStorage.penguruses = JSON.stringify(this.penguruses)
