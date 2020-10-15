@@ -46,7 +46,19 @@
 <script>
 export default {
     head: {
-        title: 'Tentang Kami'
+        title: 'Tentang Kami',
+        meta: [
+            {
+                hid: 'description',
+                name: 'description',
+                content: 'Kami adalah forum mahasiswa daerah yang ter-inisiasi pada tahun 2011 dan diresmikan pada tahun 2012. Bernaung dibawah naungan SEMA AMIKOM.'
+            },
+            {
+                hid: 'og:description',
+                name: 'og:description',
+                content: 'Kami adalah forum mahasiswa daerah yang ter-inisiasi pada tahun 2011 dan diresmikan pada tahun 2012. Bernaung dibawah naungan SEMA AMIKOM.'
+            },
+        ]
     }
 }
 </script>

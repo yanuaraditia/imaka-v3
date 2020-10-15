@@ -167,6 +167,18 @@ export default {
     },
     head: {
         title: 'Penelusuran Minat Siswa',
+        meta: [
+            {
+                hid: 'description',
+                name: 'description',
+                content: 'Bingung mau melanjutkan kemana? Yuk share impian yang ingin kamu capai setelah lulus SLTA nanti'
+            },
+            {
+                hid: 'og:description',
+                name: 'og:description',
+                content: 'Bingung mau melanjutkan kemana? Yuk share impian yang ingin kamu capai setelah lulus SLTA nanti'
+            },
+        ]
     },
     methods: {
         onSubmit(evt) {

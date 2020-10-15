@@ -3,7 +3,12 @@
         <section class="py-5">
             <div class="container-fluid my-lg-5 pt-lg-4" v-if="isLoaded">
                 <b-img :src="anggota.image_link" class="full-radius"></b-img>
-                <h1 class="ndes-1 f-2 mt-2">{{anggota.name}}</h1>
+                <h1 class="ndes-1 f-2 mt-2">
+                    {{anggota.name}}
+                    <span @click="share">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                    </span>
+                </h1>
                 <hr>
                 <div class="row mt-md-5">
                     <div class="col-12 col-md-4">
@@ -51,7 +56,8 @@ export default {
             return {
                 anggota: data.data,
                 isLoaded: true,
-                title: data.data.name
+                title: data.data.name,
+                canShare: false,
             }
         } else {
             error({ statusCode: 404, message: 'Anggota tidak ditemukan' })
@@ -62,5 +68,28 @@ export default {
             title: this.title
         }
     },
+    methods: {
+        share() {
+            if (navigator.share) {
+                navigator.share({
+                title: this.title,
+                text: `Profil ${this.anggota.name}`,
+                url: window.location.href
+                }).then(() => {
+                    console.log('Thanks for sharing!');
+                })
+                .catch(err => {
+                    console.log(`Couldn't share because of`, err.message);
+                });
+            } else {
+                console.log('web share not supported');
+            }
+        }
+    },
+    mounted() {
+        if(navigator.share) {
+            this.canShare = true
+        }
+    }
 }
 </script>

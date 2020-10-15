@@ -28,7 +28,19 @@ export default {
         }
     },
     head: {
-        title: "Sesepuh"
+        title: "Sesepuh",
+        meta: [
+            {
+                hid: 'description',
+                name: 'description',
+                content: 'Dibalik batu ada udang, dibalik IMAKA ada mereka yang selalu siap meluangkan waktu untuk menjadikan imaka organisasi yang bermanfaat bagi siapapun'
+            },
+            {
+                hid: 'og:description',
+                name: 'og:description',
+                content: 'Dibalik batu ada udang, dibalik IMAKA ada mereka yang selalu siap meluangkan waktu untuk menjadikan imaka organisasi yang bermanfaat bagi siapapun'
+            },
+        ]
     },
     methods: {
         loadPengurus() {
