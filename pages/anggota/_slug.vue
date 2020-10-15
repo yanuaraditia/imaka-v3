@@ -70,11 +70,11 @@ export default {
         const { data } = await axios.get(`https://api.imaka.or.id/v2/anggota/${params.slug}`).catch(e => {
             error({ statusCode: 404, message: 'Anggota tidak ditemukan' })
         })
-        if(data.data) {
+        if(data) {
             return {
-                anggota: data.data,
+                anggota: data,
                 isLoaded: true,
-                title: data.data.name
+                title: data.name
             }
         } else {
             error({ statusCode: 404, message: 'Anggota tidak ditemukan' })
