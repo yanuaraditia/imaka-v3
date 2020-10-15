@@ -26,10 +26,12 @@
 	}
 }
 .dark-mode {
-	.navbar {
-		position: absolute!important;
-		&.fixed {
-			position: fixed!important;
-		}	
+	@media screen and (min-width: 1024px) {
+		.navbar {
+			position: absolute!important;
+			&.fixed {
+				position: fixed!important;
+			}	
+		}
 	}
 }
