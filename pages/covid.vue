@@ -45,7 +45,7 @@ export default {
     methods: {
         async loadData() {
             axios
-            .get('https://dev.imaka.or.id/api/deployer')
+            .get('https://api.imaka.or.id/v2/covid')
             .then(res => {
                 this.dataMentah = res.data.data
                 this.isLoaded = true
