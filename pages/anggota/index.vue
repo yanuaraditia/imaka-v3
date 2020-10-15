@@ -66,7 +66,7 @@ export default {
             }
             await axios.get('https://api.imaka.or.id/v2/anggota')
             .then(response => {
-                localStorage.anggotas = JSON.stringify(response.data.data)
+                localStorage.anggotas = JSON.stringify(response.data.datas)
                 this.anggotas = response.data.datas
                 this.isLoaded = true
             })
