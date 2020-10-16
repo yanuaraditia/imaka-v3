@@ -76,6 +76,8 @@ export default {
 
             if(this.anggotas.length < 1) {
                 this.notFound = true
+            } else {
+                this.notFound = false
             }
         },
         prepAnggota(data) {

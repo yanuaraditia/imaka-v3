@@ -4,7 +4,7 @@
             <div class="body">
                 <div class="container-fluid my-md-5">
                     <div class="row">
-                        <div class="col-lg-8 my-auto pl-xl-5 pt-5 pt-md-0 blurred">
+                        <div class="col-lg-8 my-auto pl-xl-5 py-5 pt-md-0 blurred">
                             <h1 class="ndes-1 f-2">Ngapak Bareng, Gayeng Bareng</h1>
                             <p>Kami merangkul dan menghubungkan mahasiswa kebumen yang berkuliah di lingkup amikom yogyakarta.</p>
                             <div class="text-left mt-md-4">
@@ -12,6 +12,7 @@
                                 Selengkapnya
                                 <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg>
                                 </nuxt-link>
+                                <weather></weather>
                             </div>
                         </div>
                     </div>
@@ -118,9 +119,16 @@ export default {
     position: absolute;
     transition: all .05s ease-in-out;
     &-3 {
-        top: -50px;
         left: 0;
-        width: 100vw;
+        @media screen and (min-width: 1024px) {
+            top: -50px;
+            width: 100vw;
+        }
+        @media screen and (max-width: 1023px) {
+            top: 0;
+            object-fit: cover;
+            height: 100%;
+        }
         filter: saturate(150%) grayscale(100%);
         opacity: .2;
         transition: all .2s ease-in-out;
