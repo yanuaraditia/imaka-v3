@@ -57,6 +57,13 @@ export default {
             } else {
                 console.log('web share not supported');
             }
+        },
+        isShare() {
+            if(navigator.share) {
+                return true
+            } else {
+                return false
+            }
         }
     },
     head() {
@@ -66,11 +73,7 @@ export default {
     },
     computed: {
         canShare() {
-            if(navigator.share) {
-                return true
-            } else {
-                return false
-            }
+            return this.isShare
         },
         eventPlace() {
             switch(this.event.place) {
