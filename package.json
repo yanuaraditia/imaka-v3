@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@nuxt/content": "^1.10.0",
     "axios": "^0.20.0",
     "bootstrap-vue": "^2.17.3",
     "es-module-lexer": "^0.3.25",

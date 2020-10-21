@@ -1,5 +1,5 @@
 export default {
-    modules: ['bootstrap-vue/nuxt'],
+    modules: ['bootstrap-vue/nuxt','@nuxt/content'],
     components: true,
     css: [
         '@styles/index.scss'
