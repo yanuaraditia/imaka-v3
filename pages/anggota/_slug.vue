@@ -2,7 +2,7 @@
     <div>
         <section class="py-5">
             <div class="container-fluid my-lg-5 pt-lg-4" v-if="isLoaded">
-                <b-img :src="anggota.image_link" class="full-radius"></b-img>
+                <b-img :src="anggota.image_link" class="full-radius" width="100px" height="100px"></b-img>
                 <h1 class="ndes-1 f-2 mt-2">
                     {{anggota.name}}
                     <span @click="share" v-if="canShare">
