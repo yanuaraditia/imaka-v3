@@ -75,8 +75,10 @@ export default {
             }
 
             if(this.anggotas.length < 1) {
+                this.page = localStorage.current_page ? localStorage.current_page : 1
                 this.notFound = true
             } else {
+                this.page = 1
                 this.notFound = false
             }
         },
