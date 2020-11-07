@@ -1,9 +1,15 @@
+import generator from './plugins/generator'
 export default {
     modules: ['bootstrap-vue/nuxt'],
     components: true,
     css: [
         '@styles/index.scss'
     ],
+    build: {
+        babel: {
+            compact: true
+        }    
+    },
     head: {
         titleTemplate: '%s – Ikatan Mahasiswa Kebumen Amikom',
         meta: [
@@ -42,7 +48,8 @@ export default {
     },    
     buildModules: [
         '@nuxtjs/pwa',
-        '@nuxtjs/color-mode'
+        '@nuxtjs/color-mode',
+        '@nuxtjs/sitemap'
     ],
     pwa: {
         manifest: {
@@ -52,6 +59,13 @@ export default {
             theme_color: '#f3b31e',
             useWebmanifestExtension: false
         }
-    }
+    },
+    sitemap: {
+        hostname: 'https://imaka.or.id',
+        gzip: true,
+        routes() {
+            return generator()
+        }
+    },
 }
 

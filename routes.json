@@ -1,0 +1,66 @@
+[
+    {
+      "name": "about",
+      "path": "/about",
+      "component": "D:\\\\Sinau\\\\imaka-v3\\\\pages\\\\about.vue",
+      "chunkName": "pages/about",
+      "url": "/about",
+      "_name": "_86bb7e50"
+    },
+    {
+      "name": "anggota",
+      "path": "/anggota",
+      "component": "D:\\\\Sinau\\\\imaka-v3\\\\pages\\\\anggota\\\\index.vue",
+      "chunkName": "pages/anggota/index",
+      "url": "/anggota",
+      "_name": "_fdd854f0"
+    },
+    {
+      "name": "covid",
+      "path": "/covid",
+      "component": "D:\\\\Sinau\\\\imaka-v3\\\\pages\\\\covid.vue",
+      "chunkName": "pages/covid",
+      "url": "/covid",
+      "_name": "_eeeb3520"
+    },
+    {
+      "name": "join",
+      "path": "/join",
+      "component": "D:\\\\Sinau\\\\imaka-v3\\\\pages\\\\join.vue",
+      "chunkName": "pages/join",
+      "url": "/join",
+      "_name": "_b6f101a2"
+    },
+    {
+      "name": "kuisioner",
+      "path": "/kuisioner",
+      "component": "D:\\\\Sinau\\\\imaka-v3\\\\pages\\\\kuisioner.vue",
+      "chunkName": "pages/kuisioner",
+      "url": "/kuisioner",
+      "_name": "_2b62ae28"
+    },
+    {
+      "name": "organisasi",
+      "path": "/organisasi",
+      "component": "D:\\\\Sinau\\\\imaka-v3\\\\pages\\\\organisasi.vue",
+      "chunkName": "pages/organisasi",
+      "url": "/organisasi",
+      "_name": "_1871c8e1"
+    },
+    {
+      "name": "anggota-slug",
+      "path": "/anggota/:slug",
+      "component": "D:\\\\Sinau\\\\imaka-v3\\\\pages\\\\anggota\\\\_slug.vue",
+      "chunkName": "pages/anggota/_slug",
+      "_name": "_7f5d3440"
+    },
+    {
+      "name": "index",
+      "path": "/",
+      "component": "D:\\\\Sinau\\\\imaka-v3\\\\pages\\\\index.vue",
+      "chunkName": "pages/index",
+      "url": "/",
+      "_name": "_474bc8c6"
+    }
+  ]
+  
