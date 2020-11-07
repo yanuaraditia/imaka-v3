@@ -1,29 +1,33 @@
 body {
 	--color: #333;
 	--form-border: #999;
-	--dyna-blur: #000;
+	--dyna-blur: rgba(0,0,0,.15);
 	--card-bg: #fff;
 	background: #fff;
 	color: var(--color);
 	.navbar {
-		&::after {
-			content: "";
-			width: 100%;
-			bottom: 0;
-			left: 0;
-			background: rgba(0,0,0,0.16);
-			position: absolute;
-			height: 1px;
+		.fixed {
+			&::after {
+				content: "";
+				width: 100%;
+				bottom: 0;
+				left: 0;
+				background: rgba(0,0,0,0.16);
+				position: absolute;
+				height: 1px;
+			}	
 		}
+	}
+	@media screen and (min-width: 1024px) {
+		--dyna-blur: transparent;
 	}
 }
 
 .dark-mode body {
-	--dyna-blur: linear-gradient(to bottom, #050505, rgba(5, 5, 5, .5));
 	--color: #fff;
 	--form-border: #333;
 	--card-bg: #111;
-	background: #050505;
+	background: #000;
 	color: var(--color);
 	.bg-light {
 		background: rgba($color: #fff, $alpha: .015)!important;

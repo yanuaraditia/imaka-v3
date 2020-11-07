@@ -10,9 +10,6 @@
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap-vue/src/index.scss';
 .main {
-    @media screen and (min-width: 1024px) {
-        margin-top: 60px;
-    }
     position: relative;
 }
 .light-mode {

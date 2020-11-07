@@ -101,7 +101,7 @@ export default {
 <style scoped lang="scss">
 .body {
     @media screen and (min-width: 1300px) {
-        min-width: 90vw;
+        min-width: 100vw;
     }
     .container-fluid {
         position: relative;
