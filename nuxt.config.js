@@ -43,6 +43,7 @@ export default {
         ],
     },
     bootstrapVue: {
+        icons: false,
         bootstrapCSS: false, 
         bootstrapVueCSS: false
     },    
@@ -58,13 +59,6 @@ export default {
             lang: 'id',
             theme_color: '#f3b31e',
             useWebmanifestExtension: false
-        }
-    },
-    sitemap: {
-        hostname: 'https://imaka.or.id',
-        gzip: true,
-        routes() {
-            return generator()
         }
     },
 }
