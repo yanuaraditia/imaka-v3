@@ -5,11 +5,6 @@ export default {
     css: [
         '@styles/index.scss'
     ],
-    build: {
-        babel: {
-            compact: true
-        }    
-    },
     head: {
         titleTemplate: '%s – Ikatan Mahasiswa Kebumen Amikom',
         meta: [
@@ -50,7 +45,6 @@ export default {
     buildModules: [
         '@nuxtjs/pwa',
         '@nuxtjs/color-mode',
-        '@nuxtjs/sitemap'
     ],
     pwa: {
         manifest: {
