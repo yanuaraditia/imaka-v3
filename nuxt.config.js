@@ -21,7 +21,7 @@ export default {
         ],
         link: [
             {
-                href: 'https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap',
+                href: 'https://fonts.googleapis.com/css?family=Google+Sans:400,400italic,500,500italic,700,700italic&display=swap',
                 rel: 'stylesheet'
             },
             {

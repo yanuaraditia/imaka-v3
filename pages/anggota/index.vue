@@ -4,11 +4,11 @@
             <div class="container-fluid my-lg-5 pt-lg-4">
                 <h1 class="ndes-1 f-2">Sedulur</h1>
                 <input type="text" class="form-control" v-if="isLoaded" @keyup="cariData" @change="cariData" v-model="pencarian" placeholder="Cari anggota">
-                <div class="row my-4 no-gutters peoples">
-                    <div class="col-12 col-md-4 col-xl-3" v-for="(anggota, i) in displayedAnggota" :key="`${new Date().now}${i}`" @mouseover="prepAnggota(anggota)">
+                <div class="row my-4 peoples text-center">
+                    <div class="col-6 mb-3 mb-lg-3 col-md-4 col-xl-3" v-for="(anggota, i) in displayedAnggota" :key="`${new Date().now}${i}`" @mouseover="prepAnggota(anggota)">
                         <nuxt-link :to="`/anggota/${anggota.card_number}`" class="card people">
-                            <div class="card-body text-nowrap">
-                                <b-img :src="anggota.image_link" class="full-radius" width="60px" height="60px" fluid alt="Responsive image"></b-img>
+                            <div class="card-body text-nowrap py-3 py-lg-4 px-5">
+                                <b-img :src="anggota.image_link" class="full-radius" width="80px" height="80px" fluid alt="Responsive image"></b-img>
                                 <h4 class="card-title f-2 text-primary mt-3 mb-0 overflow-hidden">{{anggota.name}}</h4>
                                 <small class="card-text">{{anggota.major.name}}</small>
                             </div>
@@ -55,7 +55,8 @@ export default {
             page: 1,
             perPage: 12,
             pages: [],
-            notFound: false
+            notFound: false,
+            majors: []
         }
     },
     methods: {
@@ -64,13 +65,14 @@ export default {
             this.cariData
             this.notFound = false
             this.anggotas = JSON.parse(localStorage.anggotas)
+            this.majors = []
         },
         cariData() {
             var datas = JSON.parse(localStorage.anggotas)
             this.anggotas = []
             for(var i = 0; i < datas.length; i++) {
                 if(datas[i].name.toLowerCase().includes(this.pencarian.toLowerCase())) {
-                    this.anggotas.push(datas[i])                    
+                    this.anggotas.push(datas[i])
                 }
             }
 
@@ -90,6 +92,8 @@ export default {
             localStorage.current_page = this.page
         },
         async getPosts () {
+            var query = this.$route.query
+
             if(localStorage.current_page) {
                 this.page = localStorage.current_page
             }
@@ -106,6 +110,11 @@ export default {
             .catch(response => {
                 console.log(response);
             });
+
+            if(query.name) {
+                this.pencarian = query.name
+                this.cariData()
+            }
         },
         setPages () {
             this.pages = []

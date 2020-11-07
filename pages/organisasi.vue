@@ -3,10 +3,10 @@
         <section class="py-5">
             <div class="container-fluid my-lg-5 pt-lg-4">
                 <h1 class="ndes-1 f-2">Struktur Organisasi</h1>
-                <div class="row my-4 no-gutters peoples">
-                    <div class="col-12 col-md-4" v-for="anggota in penguruses" :key="anggota.id">
+                <div class="row my-4 peoples text-center">
+                    <div class="col-6 mb-3 mb-lg-3 col-md-4 col-xl-3" v-for="anggota in penguruses" :key="anggota.id">
                         <nuxt-link :to="'/anggota/'+anggota.user.card_number" class="card people">
-                            <div class="card-body text-nowrap">
+                            <div class="card-body text-nowrap py-3 py-lg-4 px-5">
                                 <b-img :src="anggota.user.image_link" class="full-radius" width="60px" height="60px" fluid alt="Responsive image"></b-img>
                                 <h4 class="f-2 card-title text-primary mt-3 mb-0 overflow-hidden">{{anggota.user.name}}</h4>
                                 <small class="card-text">{{anggota.name}}</small>

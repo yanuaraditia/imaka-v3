@@ -31,7 +31,7 @@
           </div>
         </div>
         <div class="row text-muted mt-md-5">
-          <div class="col-md-6">© {{new Date().getFullYear()}} Ikatan Mahasiswa Kebumen Amikom.</div>
+          <div class="col-md-6">Copyright © {{new Date().getFullYear()}} Ikatan Mahasiswa Kebumen Amikom.</div>
           <div class="col-md-6 text-lg-right">With 🧉 by <a href="//yanuaraditia.com">Yanuar Aditia</a></div>
         </div>
       </div>
